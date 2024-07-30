@@ -62,30 +62,28 @@
 }
 
 .delivery-list {
-  overflow-x: hidden; // Esconde a rolagem horizontal do container principal
+  overflow-x: hidden; 
 }
 
 mat-card {
-  overflow: hidden; // Esconde o conteúdo que ultrapassar os limites do card
+  overflow: hidden; 
 }
 
 .mat-card-content {
-  overflow-x: auto; // Adiciona rolagem horizontal quando necessário
+  overflow-x: auto; 
 }
 
 .mat-table {
-  min-width: 100%; // Garante que a tabela tenha pelo menos a largura total do card
-  width: max-content; // Permite que a tabela cresça além da largura do card se necessário
+  min-width: 100%; 
+  width: max-content; 
 }
-
-// ... (mantenha o resto do CSS existente)
 
 .delivery-list {
   padding: 20px;
 }
 
 mat-card {
-  overflow: hidden; // Esconde overflow do card
+  overflow: hidden; 
   margin-bottom: 20px;
 }
 
@@ -99,7 +97,7 @@ mat-card {
 
 table {
   width: 100%;
-  min-width: 800px; // Ajuste conforme necessário
+  min-width: 800px;
 }
 
 .filters {
@@ -108,8 +106,6 @@ table {
   gap: 20px;
   margin-bottom: 20px;
 }
-
-// ... (mantenha o resto do CSS existente)
 
 .dashboard-card {
   padding: 20px;
