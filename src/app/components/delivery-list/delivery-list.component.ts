@@ -30,7 +30,7 @@ export class DeliveryListComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'documento', 'motorista', 'cliente_origem', 'cliente_destino', 'status_entrega'];
 
-  constructor(private deliveryService: DeliveryService) {}
+  constructor(private deliveryService: DeliveryService) { }
 
   ngOnInit() {
     this.deliveryService.getDeliveries().subscribe(
@@ -48,7 +48,7 @@ export class DeliveryListComponent implements OnInit {
     if (this.selectedDriver === '' && this.selectedStatus === '') {
       this.filteredDeliveries = this.deliveries;
     } else {
-      this.filteredDeliveries = this.deliveries.filter(delivery => 
+      this.filteredDeliveries = this.deliveries.filter(delivery =>
         (this.selectedDriver === '' || delivery.motorista.nome === this.selectedDriver) &&
         (this.selectedStatus === '' || delivery.status_entrega === this.selectedStatus)
       );

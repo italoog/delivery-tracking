@@ -29,29 +29,29 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
-  
+
   it(`should have the 'Delivery Tracking' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('Delivery Tracking');
   });
-  
+
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.app-title')?.textContent).toContain('Delivery Tracking');
   });
-  
+
   it('should add resize event listener on init and remove on destroy', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     spyOn(window, 'addEventListener');
     spyOn(window, 'removeEventListener');
-    
+
     app.ngOnInit();
     expect(window.addEventListener).toHaveBeenCalledWith('resize', jasmine.any(Function));
-    
+
     app.ngOnDestroy();
     expect(window.removeEventListener).toHaveBeenCalledWith('resize', jasmine.any(Function));
   });

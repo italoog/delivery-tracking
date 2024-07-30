@@ -79,24 +79,24 @@ describe('DeliveryListComponent', () => {
 
   it('should handle pagination correctly', () => {
     mockDeliveryService.getDeliveries.and.returnValue(of([]));
-  
+
     component.ngOnInit();
     fixture.detectChanges();
-  
+
     component.deliveries = Array(20).fill(null).map((_, i) => ({
       ...mockDelivery,
       id: i.toString(),
       motorista: { nome: 'Driver' + i }
     }));
-    component.applyFilter(); 
+    component.applyFilter();
     fixture.detectChanges();
-  
+
     expect(component.pagedDeliveries.length).toBe(10);
     expect(component.pagedDeliveries[0].id).toBe('0');
-  
+
     component.onPageChange({ pageIndex: 1, pageSize: 10, length: 20 } as PageEvent);
     fixture.detectChanges();
-  
+
     expect(component.currentPage).toBe(1);
     expect(component.pageSize).toBe(10);
     expect(component.pagedDeliveries.length).toBe(10);

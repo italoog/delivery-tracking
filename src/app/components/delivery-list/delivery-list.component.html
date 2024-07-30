@@ -42,24 +42,22 @@
         </ng-container>
         <ng-container matColumnDef="status_entrega">
           <th mat-header-cell *matHeaderCellDef>Status</th>
-        <td mat-cell *matCellDef="let element">
-          <span class="status-badge" [ngClass]="{
+          <td mat-cell *matCellDef="let element">
+            <span class="status-badge" [ngClass]="{
             'status-entregue': element.status_entrega === 'ENTREGUE',
             'status-pendente': element.status_entrega === 'PENDENTE',
             'status-insucesso': element.status_entrega === 'INSUCESSO'
           }">
-            {{element.status_entrega}}
-          </span>
-        </td>
+              {{element.status_entrega}}
+            </span>
+          </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <mat-paginator [length]="totalDeliveries"
-                     [pageSize]="pageSize"
-                     [pageSizeOptions]="pageSizeOptions"
-                     (page)="onPageChange($event)">
+      <mat-paginator [length]="totalDeliveries" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        (page)="onPageChange($event)">
       </mat-paginator>
     </mat-card-content>
   </mat-card>

@@ -9,7 +9,7 @@ import { Delivery } from '../models/delivery.model';
 export class DeliveryService {
   private dataUrl = 'https://raw.githubusercontent.com/brunochikuji/example/main/entregas.json';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getDeliveries(): Observable<Delivery[]> {
     return this.http.get<Delivery[]>(this.dataUrl);

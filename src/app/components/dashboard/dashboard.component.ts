@@ -27,7 +27,7 @@ interface NeighborhoodStats {
 export class DashboardComponent implements OnInit {
   deliveries: Delivery[] = [];
 
-  constructor(private deliveryService: DeliveryService) {}
+  constructor(private deliveryService: DeliveryService) { }
 
   ngOnInit() {
     this.deliveryService.getDeliveries().subscribe(

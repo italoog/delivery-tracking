@@ -40,21 +40,21 @@
 
 .dashboard-card {
   height: 100%;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .mat-card-content {
-  overflow-x: auto; 
+  overflow-x: auto;
 }
 
 .mat-table {
-  min-width: 100%; 
-  width: max-content; 
+  min-width: 100%;
+  width: max-content;
 }
 
 @media (max-width: 600px) {
   .dashboard-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
 
@@ -79,7 +79,7 @@
 
 table {
   width: 100%;
-  min-width: 200px; 
+  min-width: 200px;
 }
 
 @media (max-width: 600px) {
