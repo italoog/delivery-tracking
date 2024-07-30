@@ -1,0 +1,117 @@
+.filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.mat-form-field {
+  width: 200px;
+}
+
+.mat-table {
+  box-shadow: none;
+}
+
+.mat-header-row {
+  background-color: #f0f0f0;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.mat-row:hover {
+  background-color: #f0f0f0;
+}
+
+.mat-column-id,
+.mat-column-documento {
+  max-width: 100px;
+}
+
+.mat-column-status_entrega {
+  max-width: 150px;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.status-entregue {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+.status-pendente {
+  background-color: #fff9c4;
+  color: #f57f17;
+}
+
+.status-insucesso {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+.delivery-list {
+  padding: 20px;
+}
+
+.delivery-list {
+  overflow-x: hidden; // Esconde a rolagem horizontal do container principal
+}
+
+mat-card {
+  overflow: hidden; // Esconde o conteúdo que ultrapassar os limites do card
+}
+
+.mat-card-content {
+  overflow-x: auto; // Adiciona rolagem horizontal quando necessário
+}
+
+.mat-table {
+  min-width: 100%; // Garante que a tabela tenha pelo menos a largura total do card
+  width: max-content; // Permite que a tabela cresça além da largura do card se necessário
+}
+
+// ... (mantenha o resto do CSS existente)
+
+.delivery-list {
+  padding: 20px;
+}
+
+mat-card {
+  overflow: hidden; // Esconde overflow do card
+  margin-bottom: 20px;
+}
+
+.mat-mdc-card-content {
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  min-width: 800px; // Ajuste conforme necessário
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+// ... (mantenha o resto do CSS existente)
+
+.dashboard-card {
+  padding: 20px;
+  height: 100%;
+}

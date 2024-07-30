@@ -1,0 +1,91 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.dashboard-card {
+  padding: 20px;
+  height: 100%;
+}
+
+.mat-card-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.mat-table {
+  box-shadow: none;
+}
+
+.mat-header-row {
+  background-color: #f0f0f0;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.mat-row:hover {
+  background-color: #f0f0f0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  height: 100%;
+  overflow: hidden; // Esconde o conteúdo que ultrapassar os limites do card
+}
+
+.mat-card-content {
+  overflow-x: auto; // Adiciona rolagem horizontal quando necessário
+}
+
+.mat-table {
+  min-width: 100%; // Garante que a tabela tenha pelo menos a largura total do card
+  width: max-content; // Permite que a tabela cresça além da largura do card se necessário
+}
+
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; // Uma coluna em telas muito pequenas
+  }
+}
+
+// ____
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.dashboard-card {
+  height: 100%;
+  overflow: hidden; // Esconde overflow do card
+}
+
+.mat-mdc-card-content {
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  min-width: 200px; // Ajuste conforme necessário
+}
+
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

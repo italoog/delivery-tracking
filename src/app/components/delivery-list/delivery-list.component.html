@@ -1,0 +1,66 @@
+<div class="delivery-list">
+  <mat-card class="dashboard-card">
+    <mat-card-title>Lista de Entregas</mat-card-title>
+    <mat-card-content>
+      <div class="filters">
+        <mat-form-field>
+          <mat-label>Motorista</mat-label>
+          <mat-select [(ngModel)]="selectedDriver" (selectionChange)="applyFilter()">
+            <mat-option value="">Todos</mat-option>
+            <mat-option *ngFor="let driver of getDrivers()" [value]="driver">{{driver}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select [(ngModel)]="selectedStatus" (selectionChange)="applyFilter()">
+            <mat-option value="">Todos</mat-option>
+            <mat-option *ngFor="let status of getStatuses()" [value]="status">{{status}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <table mat-table [dataSource]="pagedDeliveries">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="documento">
+          <th mat-header-cell *matHeaderCellDef>Documento</th>
+          <td mat-cell *matCellDef="let element">{{element.documento}}</td>
+        </ng-container>
+        <ng-container matColumnDef="motorista">
+          <th mat-header-cell *matHeaderCellDef>Motorista</th>
+          <td mat-cell *matCellDef="let element">{{element.motorista.nome}}</td>
+        </ng-container>
+        <ng-container matColumnDef="cliente_origem">
+          <th mat-header-cell *matHeaderCellDef>Origem</th>
+          <td mat-cell *matCellDef="let element">{{element.cliente_origem.nome}}</td>
+        </ng-container>
+        <ng-container matColumnDef="cliente_destino">
+          <th mat-header-cell *matHeaderCellDef>Destino</th>
+          <td mat-cell *matCellDef="let element">{{element.cliente_destino.nome}}</td>
+        </ng-container>
+        <ng-container matColumnDef="status_entrega">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">
+          <span class="status-badge" [ngClass]="{
+            'status-entregue': element.status_entrega === 'ENTREGUE',
+            'status-pendente': element.status_entrega === 'PENDENTE',
+            'status-insucesso': element.status_entrega === 'INSUCESSO'
+          }">
+            {{element.status_entrega}}
+          </span>
+        </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [length]="totalDeliveries"
+                     [pageSize]="pageSize"
+                     [pageSizeOptions]="pageSizeOptions"
+                     (page)="onPageChange($event)">
+      </mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>

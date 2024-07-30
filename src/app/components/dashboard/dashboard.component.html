@@ -1,0 +1,68 @@
+<div *ngIf="deliveries.length > 0; else noData">
+  <div class="dashboard-grid">
+    <mat-card class="dashboard-card">
+      <mat-card-title>Andamento de Entregas por Motorista</mat-card-title>
+      <mat-card-content>
+        <table mat-table [dataSource]="getDriverStats()">
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef>Nome do Motorista</th>
+            <td mat-cell *matCellDef="let element">{{element.nome}}</td>
+          </ng-container>
+          <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>Total de Entregas</th>
+            <td mat-cell *matCellDef="let element">{{element.total}}</td>
+          </ng-container>
+          <ng-container matColumnDef="realizadas">
+            <th mat-header-cell *matHeaderCellDef>Entregas Realizadas</th>
+            <td mat-cell *matCellDef="let element">{{element.realizadas}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="['nome', 'total', 'realizadas']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['nome', 'total', 'realizadas'];"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="dashboard-card">
+      <mat-card-title>Entregas com Insucesso por Motorista</mat-card-title>
+      <mat-card-content>
+        <table mat-table [dataSource]="getFailedDeliveries()">
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef>Nome do Motorista</th>
+            <td mat-cell *matCellDef="let element">{{element.nome}}</td>
+          </ng-container>
+          <ng-container matColumnDef="insucessos">
+            <th mat-header-cell *matHeaderCellDef>Quantidade de Insucessos</th>
+            <td mat-cell *matCellDef="let element">{{element.insucessos}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="['nome', 'insucessos']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['nome', 'insucessos'];"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="dashboard-card">
+      <mat-card-title>Andamento de Entregas por Bairro</mat-card-title>
+      <mat-card-content>
+        <table mat-table [dataSource]="getNeighborhoodStats()">
+          <ng-container matColumnDef="bairro">
+            <th mat-header-cell *matHeaderCellDef>Bairro</th>
+            <td mat-cell *matCellDef="let element">{{element.bairro}}</td>
+          </ng-container>
+          <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>Total de Entregas</th>
+            <td mat-cell *matCellDef="let element">{{element.total}}</td>
+          </ng-container>
+          <ng-container matColumnDef="realizadas">
+            <th mat-header-cell *matHeaderCellDef>Entregas Realizadas</th>
+            <td mat-cell *matCellDef="let element">{{element.realizadas}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="['bairro', 'total', 'realizadas']"></tr>
+          <tr mat-row *matRowDef="let row; columns: ['bairro', 'total', 'realizadas'];"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<ng-template #noData>
+  <p>Carregando dados...</p>
+</ng-template>
