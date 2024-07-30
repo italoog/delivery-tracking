@@ -14,7 +14,6 @@ Um sistema moderno de rastreamento de entregas construído com Angular 18.
 - [Instalação](#-instalação)
 - [Executando o Projeto](#-executando-o-projeto)
 - [Executando os Testes](#-executando-os-testes)
-- [Construção](#-construção)
 - [Licença](#-licença)
 
 ## 🎯 Sobre
@@ -61,28 +60,10 @@ Navegue para `http://localhost:4200/`. O aplicativo será recarregado automatica
 Execute o seguinte comando para rodar os testes unitários via [Karma](https://karma-runner.github.io):
 `ng test`
 
-### Testes End-to-End (E2E)
-
-Primeiro, certifique-se de que a aplicação está rodando (`ng serve`). Em seguida:
-
-1. Para abrir o Cypress Test Runner (modo interativo):
-`npm run cypress:open`
-
-2. Para executar os testes e2e em modo headless:
-`npm run cypress:run`
-
-Os testes e2e são implementados usando [Cypress](https://www.cypress.io/).
-
-## 📦 Construção
-
-Execute o seguinte comando para construir o projeto:
-
-Os artefatos de construção serão armazenados no diretório `dist/`.
-
 ## 📄 Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
 ---
 
-Desenvolvido com ❤️ por italoog
+Desenvolvido com ☕ por italoog
